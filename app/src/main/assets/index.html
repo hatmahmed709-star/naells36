@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لواء 36 - نظام التدقيق</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <div class="logo">36</div>
+        <div>
+          <h1>لواء 36</h1>
+          <div class="subtitle">نظام التدقيق والمواد القانونية</div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">
+          <small>إجمالي السجلات</small>
+          <strong id="totalRecords">0</strong>
+        </div>
+        <div class="stat-box">
+          <small>المطابقات</small>
+          <strong id="matchRecords">0</strong>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="controls">
+        <div>
+          <label>بحث سريع</label>
+          <input id="searchInput" type="text" placeholder="ابحث باسم الشخص أو المادة..." />
+        </div>
+
+        <div>
+          <label>تصفية حسب المادة</label>
+          <select id="articleFilter">
+            <option value="">كل المواد</option>
+          </select>
+        </div>
+
+        <div>
+          <label>تحميل ملف CSV</label>
+          <input id="csvInput" type="file" accept=".csv,.txt" />
+        </div>
+      </div>
+
+      <div style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <button id="demoBtn" type="button">تحميل بيانات نموذجية</button>
+        <button id="clearBtn" type="button" class="secondary">مسح البحث</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>الاسم الكامل</th>
+              <th>رقم الوثيقة</th>
+              <th>المادة القانونية</th>
+              <th>حالة المادة</th>
+              <th>تاريخ الإدراج</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+
+        <div id="emptyState" class="empty hidden">
+          لا توجد بيانات لعرضها حالياً.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
